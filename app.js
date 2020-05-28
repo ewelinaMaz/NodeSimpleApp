@@ -189,7 +189,9 @@ function randChoice() {
     }
 }
 randChoice();
-fs.writeFile('people.json', people, (err) => {
+const data = JSON.stringify(people);
+
+fs.writeFile('people.json', data, (err) => {
     if (err) throw err;
     console.log('The file has been saved!');
   });
